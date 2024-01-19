@@ -14,11 +14,11 @@ function App() {
       <Router>
         <Routes>
           <Route path='/gather-sphere-frontend' element={<Home />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/signup' element={<SignUp />}></Route>
-          <Route path='/allevents' element={<AllEvents />}></Route>
-          <Route path='/myevents' element={<MyEvents />}></Route>
-          <Route path='/myaccount' element={<MyAccount />}></Route>
+          <Route path='/gather-sphere-frontend/login' element={<Login />}></Route>
+          <Route path='/gather-sphere-frontend/signup' element={<SignUp />}></Route>
+          <Route path='/gather-sphere-frontend/allevents' element={<AllEvents />}></Route>
+          <Route path='/gather-sphere-frontend/myevents' element={<MyEvents />}></Route>
+          <Route path='/gather-sphere-frontend/myaccount' element={<MyAccount />}></Route>
         </Routes>
       </Router>
     </AuthProvider>
