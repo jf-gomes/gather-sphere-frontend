@@ -13,16 +13,16 @@ export default function NavBar(){
             <div className={styles.rightSideDiv}>
                 <ul>
                     <li>
-                        <Link to='/allevents'>Todos os eventos</Link>
+                        <Link to='/gather-sphere-frontend/allevents'>Todos os eventos</Link>
                     </li>
                     <li>
-                        <Link to='/myevents'>Meus eventos</Link>
+                        <Link to='/gather-sphere-frontend/myevents'>Meus eventos</Link>
                     </li>
                     <li>
-                        <Link to='/myaccount'>Meu cadastro</Link>
+                        <Link to='/gather-sphere-frontend/myaccount'>Meu cadastro</Link>
                     </li>
                     <li>
-                        <Link onClick={() => setToken('')} to='/login'>Sair</Link>
+                        <Link onClick={() => setToken('')} to='/gather-sphere-frontend/login'>Sair</Link>
                     </li>
                 </ul>
             </div>

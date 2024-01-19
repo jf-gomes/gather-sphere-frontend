@@ -49,7 +49,7 @@ export default function Login(){
                         <input className={styles.loginBtn} type="submit" value="Entrar" onClick={handleSubmit} />
                     </form>
                     <div className={styles.additionalInfoDiv}>
-                        <p>Não possui uma conta? <span><Link to='/signup'>Criar agora!</Link></span></p>
+                        <p>Não possui uma conta? <span><Link to='/gather-sphere-frontend/signup'>Criar agora!</Link></span></p>
                         <p>Esqueceu a senha? <span><Link>Recuperar!</Link></span></p>
                     </div>
                 </div>

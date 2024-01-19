@@ -69,7 +69,7 @@ export default function SignUp(){
                         <input className={styles.signUpBtn} type="submit" value="Cadastrar" onClick={handleSubmit} />
                     </form>
                     <div className={styles.additionalInfoDiv}>
-                        <p>Já tem uma conta? <span><Link to='/login'>Entrar!</Link></span></p>
+                        <p>Já tem uma conta? <span><Link to='/gather-sphere-frontend/login'>Entrar!</Link></span></p>
                     </div>
                 </div>
             </main>
