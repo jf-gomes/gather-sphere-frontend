@@ -13,7 +13,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
+          <Route path='/gather-sphere-frontend' element={<Home />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/signup' element={<SignUp />}></Route>
           <Route path='/allevents' element={<AllEvents />}></Route>
