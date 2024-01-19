@@ -1,0 +1,21 @@
+.toastDiv{
+    text-align: center;
+    background-color: white;
+    padding: .6em;
+    margin: .6em;
+    position: absolute;
+    width: 300px;
+    bottom: 0;
+    right: 0;
+    border-radius: 6px;
+}
+
+.toastBtn{
+    float: right;
+    background: none;
+    border: none;
+}
+
+.toastBtn:hover{
+    cursor: pointer;
+}

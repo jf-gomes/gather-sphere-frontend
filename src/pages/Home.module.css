@@ -1,0 +1,43 @@
+.homeMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    gap: 8rem;
+    padding: 2em;
+}
+
+.leftSideDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.leftSideDiv p{
+    font-size: 1.3em;
+}
+
+.btnDiv{
+    display: flex;
+    gap: 2rem;
+    margin-top: 2em;
+}
+
+.btnDiv button{
+    background-color: white;
+    border: none;
+    padding: .6em;
+    border-radius: 6px;
+    font-size: 1.3em;
+    font-weight: bold;
+    width: 150px;
+    transition: .6s;
+}
+
+.btnDiv button:hover{
+    cursor: pointer;
+    background-color: #788BFF;
+    color: white;
+}

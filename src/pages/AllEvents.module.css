@@ -1,0 +1,62 @@
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.allEventsMain{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+
+.allEventsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.eventDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: white;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 1px 1px 13px -2px;
+    font-size: 1.3em;
+    max-width: 300px;
+    height: 500px;
+}
+
+.eventBanner{
+    width: 300px;
+    height: 200px;
+}
+
+.eventTitle{
+    font-weight: bold;
+}
+
+.btn{
+    background-color: #5465FF;
+    color: white;
+    padding: .3em;
+    border-radius: 6px;
+    font-size: 1em;
+    border: 1px solid #5465FF;
+    width: 150px;
+}
+
+.btn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btnDiv{
+    display: flex;
+    gap: 2rem;
+}

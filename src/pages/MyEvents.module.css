@@ -1,0 +1,26 @@
+.myEventsMain{
+    background-color: white;
+}
+
+.eventDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    font-size: 1.2em;
+    border: 1px solid black;
+}
+
+.cancelEventBtn{
+    background-color: #5465FF;
+    color: white;
+    padding: .3em;
+    border-radius: 6px;
+    font-size: 1em;
+    border: 1px solid #5465FF;
+}
+
+.cancelEventBtn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+.modalContainerDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 1px 1px 13px -2px;
+}
+
+.modalContainerDiv p{
+    font-size: 1.3em;
+}
+
+.modalContainerDiv img{
+    width: 400px;
+    height: 300px;
+}
+
+.modalBtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2em;
+    background: none;
+    border: none;
+}
+
+.modalBtn:hover{
+    cursor: pointer;
+}

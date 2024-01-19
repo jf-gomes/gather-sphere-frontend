@@ -1,0 +1,51 @@
+.signUpMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainDiv{
+    background-color: white;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 1px 1px 13px -2px;
+    margin-bottom: 2em;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.loginForm input{
+    padding: .6em;
+    border-radius: 6px;
+    font-size: 1.3em;
+    border: 1px solid #5465FF;
+}
+
+.signUpBtn{
+    background-color: #5465FF;
+    color: white;
+    margin-bottom: 2em;
+}
+
+.signUpBtn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.additionalInfoDiv p{
+    font-size: 1.3em;
+}
+
+.additionalInfoDiv span a{
+    color: #5465FF;
+    text-decoration: none;
+}
+
+.additionalInfoDiv span a:hover{
+    text-decoration: underline;
+}
