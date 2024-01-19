@@ -16,8 +16,8 @@ export default function Home(){
                     <h1>Encontre eventos na sua região</h1>
                     <p>Crie seus eventos, inscreva-se em outros eventos próximos a você.</p>
                     <div className={styles.btnDiv}>
-                        <button onClick={() => navigate('/signup')}>Cadastrar</button>
-                        <button onClick={() => navigate('/login')}>Entrar</button>
+                        <button onClick={() => navigate('/gather-sphere-frontend/signup')}>Cadastrar</button>
+                        <button onClick={() => navigate('/gather-sphere-frontend/login')}>Entrar</button>
                     </div>
                 </div>
                 <div className={styles.rightSideDiv}>

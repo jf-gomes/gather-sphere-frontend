@@ -21,7 +21,7 @@ export default function MyEvents(){
 
     useEffect(() => {
         if (!token){
-            navigate('/login')
+            navigate('/gather-sphere-frontend/login')
         } else {
             const userEvents = events.filter((event) => userData.events.indexOf(event._id) != -1)
             setMyEvents(userEvents)

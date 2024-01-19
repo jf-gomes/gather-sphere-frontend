@@ -23,7 +23,7 @@ export default function MyAccount(){
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (!token) navigate('/login')
+        if (!token) navigate('/gather-sphere-frontend/login')
     }, [])
 
     async function handleSubmit(e){

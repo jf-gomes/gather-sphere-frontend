@@ -32,7 +32,7 @@ export default function Login(){
             if (login.status == 200){
                 setToken(`${response.data.token}`)
                 setUserData(response.data.user)
-                navigate('/allevents')
+                navigate('/gather-sphere-frontend/allevents')
             }
         }
     }

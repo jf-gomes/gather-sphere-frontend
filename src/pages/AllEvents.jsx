@@ -41,7 +41,7 @@ export default function AllEvents(){
 
     async function getEvents(){
         if (!token){
-            navigate('/login')
+            navigate('/gather-sphere-frontend/login')
         } else {
             const response = await api.get('/events', {
                 headers: {
