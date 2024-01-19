@@ -6,7 +6,6 @@ import Header from '../components/Header'
 import { AuthContext } from '../contexts/auth'
 import NavBar from '../components/NavBar.jsx'
 import Footer from '../components/Footer.jsx'
-import Toast from '../components/Toast.jsx'
 
 export default function MyAccount(){
 
@@ -16,9 +15,6 @@ export default function MyAccount(){
     const [email, setEmail] = useState(userData.email)
     const [cpf, setCpf] = useState(userData.cpf)
     const [cel, setCel] = useState(userData.cel)
-
-    const [toggleToast, setToggleToast] = useState(false)
-    const [toastContent, setToastContent] = useState('')
 
     const navigate = useNavigate()
 
@@ -36,8 +32,7 @@ export default function MyAccount(){
         })
         console.log(response)
         if (response.status == 200){
-            setToggleToast(!toggleToast)
-            setToastContent('Cadastro alterado com sucesso!')
+            alert('Cadastro alterado com sucesso!')
             const user = await api.get(`/users/${userData._id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -52,7 +47,6 @@ export default function MyAccount(){
             <Header />
             <NavBar />
             <main className={styles.signUpMain}>
-                <Toast isOpen={toggleToast} toastContent={toastContent} setToggleToast={setToggleToast} />
                 <div className={styles.mainDiv}>
                     <h1>Editar meu cadastro</h1>
                     <form className={styles.loginForm}>

@@ -6,7 +6,6 @@ import NavBar from '../components/NavBar.jsx'
 import { api } from '../sevices/api.js'
 import Footer from '../components/Footer.jsx'
 import { useNavigate } from 'react-router-dom'
-import Toast from '../components/Toast.jsx'
 
 export default function MyEvents(){
 
@@ -15,9 +14,6 @@ export default function MyEvents(){
     const { token, events, setUserData, userData } = useContext(AuthContext)
 
     const [myEvents, setMyEvents] = useState([])
-
-    const [toggleToast, setToggleToast] = useState(false)
-    const [toastContent, setToastContent] = useState('')
 
     useEffect(() => {
         if (!token){
@@ -40,17 +36,8 @@ export default function MyEvents(){
         })
         setUserData(user.data.user)
         if (response.status == 200){
-            setToggleToast(!toggleToast)
-            setToastContent('Inscrição cancelada com sucesso!')
+            alert('Inscrição cancelada com sucesso!')
         }
-    }
-
-    function generateCard(){
-        const content = document.getElementById('card')
-        const options = {
-            filename: 'arquivo.pdf'
-        }
-        html2pdf().set(options).from(content).save()
     }
 
     return (
@@ -58,7 +45,6 @@ export default function MyEvents(){
             <Header />
             <NavBar />
             <main className={styles.myEventsMain}>
-                <Toast isOpen={toggleToast} toastContent={toastContent} setToggleToast={setToggleToast} />
                 {myEvents.length == 0 ? <p style={{textAlign: 'center', padding: '2em'}}>Você não está inscrito(a) em nenhum evento.</p> : myEvents.map((event) => (
                     <div key={event._id} className={styles.eventDiv}>
                         <div style={{display: 'flex', gap: '2rem'}}>

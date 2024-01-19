@@ -56,12 +56,12 @@ export default function Slides(){
              navigation
              autoplay
              a
-             style={size == 'p' ? {width: '400px', height: '300px'} : {width: '700px', height: '500px'}}
+             style={size == 'p' ? {width: '350px', height: '250px'} : {width: '700px', height: '500px'}}
             >
                 {data.map((item) => (
-                    <SwiperSlide className={styles.swiperSlide}>
+                    <SwiperSlide key={item.id} className={styles.swiperSlide}>
                         <h2 className={styles.slideTitle}>{item.title}</h2>
-                        <img style={size == 'p' ? {width: '400px', height: '300px'} : {width: '700px', height: '500px'}} src={item.img} alt={item.title} />
+                        <img style={size == 'p' ? {width: '350px', height: '250px'} : {width: '700px', height: '500px'}} src={item.img} alt={item.title} />
                     </SwiperSlide>
                 ))}
             </Swiper>

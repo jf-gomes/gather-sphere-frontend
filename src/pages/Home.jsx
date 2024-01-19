@@ -20,7 +20,7 @@ export default function Home(){
                         <button onClick={() => navigate('/gather-sphere-frontend/login')}>Entrar</button>
                     </div>
                 </div>
-                <div className={styles.rightSideDiv}>
+                <div>
                     <Slides />
                 </div>
             </main>

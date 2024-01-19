@@ -6,15 +6,11 @@ import { useNavigate } from "react-router-dom"
 import NavBar from "../components/NavBar.jsx"
 import Header from "../components/Header.jsx"
 import Footer from '../components/Footer.jsx'
-import Toast from "../components/Toast.jsx"
 import Modal from "../components/Modal.jsx"
 
 export default function AllEvents(){
 
     const { token, userData, events, setEvents } = useContext(AuthContext)
-
-    const [toggleToast, setToggleToast] = useState(false)
-    const [toastContent, setToastContent] = useState('')
 
     const [toggleModal, setToggleModal] = useState(false)
     const [modalContent, setModalContent] = useState('')
@@ -62,8 +58,7 @@ export default function AllEvents(){
                 events: newList
             })
             if (response.status == 200){
-                setToggleToast(!toggleToast)
-                setToastContent('Inscrição efetuada com sucesso!')
+                alert('Inscrição efetuada com sucesso!')
             }
         }
     }
@@ -74,7 +69,6 @@ export default function AllEvents(){
             <NavBar />
             <Modal toggleModal={toggleModal} modalContent={modalContent} setToggleModal={setToggleModal} size={size} />
             <main className={styles.allEventsMain}>
-                <Toast isOpen={toggleToast} toastContent={toastContent} setToggleToast={setToggleToast} />
                 <div className={styles.allEventsContainer}>
                 {events.length > 0 ? events.map((event) => (
                     <div key={event._id} className={styles.eventDiv}>
@@ -86,7 +80,7 @@ export default function AllEvents(){
                                 setToggleModal(!toggleModal)
                                 setModalContent(event)
                             }} />
-                            <input style={userData.events.indexOf(event._id) != -1 ? {backgroundColor: 'lightgray'} : null} id="liveToastBtn" className={styles.btn} type="button" value={userData.events.indexOf(event._id) == -1 ? 'Inscrever-se' : 'Já Inscrito(a)'} onClick={() => signupEvent(event)} />
+                            <input style={userData.events.indexOf(event._id) != -1 ? {backgroundColor: 'lightgray'} : null} className={styles.btn} type="button" value={userData.events.indexOf(event._id) == -1 ? 'Inscrever-se' : 'Já Inscrito(a)'} onClick={() => signupEvent(event)} />
                         </div>
                     </div>
                 )) : <div>Nenhum evento disponível. Tente novamente mais tarde.</div>}
