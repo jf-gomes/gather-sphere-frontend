@@ -8,7 +8,7 @@
 
 GatherSphere é uma ideia de website para gerenciamento de eventos. O objetivo é oferecer um lugar onde usuários possam encontrar cursos, shows e outros tipos de eventos próximos a eles, para que eles possam se inscrever no evento e participar.
 
-Link do deploy: https://jf-gomes.github.io/gather-sphere-frontend/
+🚀 Link do deploy: https://jf-gomes.github.io/gather-sphere-frontend/
 
 ## 🔥 Funcionalidades
 
