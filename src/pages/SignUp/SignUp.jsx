@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import styles from './SignUp.module.css'
-import { useRef } from 'react'
-import { api } from '../sevices/api'
+import { useRef, useState } from 'react'
+import { api } from '../../data/services/api.js'
 import { useNavigate } from 'react-router-dom'
-import Header from '../components/Header'
-import { AuthContext } from '../contexts/auth'
+import Header from '../../ui/components/Header/Header.jsx'
+import { AuthContext } from '../../data/contexts/auth.jsx'
 import { useContext } from 'react'
+import Loader from '../../ui/components/Loader/Loader.jsx'
 
 export default function SignUp(){
 
@@ -13,11 +14,14 @@ export default function SignUp(){
 
     const navigate = useNavigate()
 
+    const [loader, setLoader] = useState(false)
+
     async function handleSubmit(e){
         e.preventDefault()
         if (userData.password1Ref.current.value != userData.password2Ref.current.value){
             alert('As senhas não conferem')
         } else {
+            setLoader(true)
             const response = await api.post('/users', {
                 name: userData.nameRef.current.value,
                 email: userData.emailRef.current.value,
@@ -39,8 +43,10 @@ export default function SignUp(){
                     setToken(`${response.data.token}`)
                     setUserData(response.data.user)
                     navigate('/gather-sphere-frontend/allevents')
+                    setLoader(false)
                 }
             }
+            setLoader(false)
         }
     }
 
@@ -67,6 +73,7 @@ export default function SignUp(){
                         <input ref={userData.password1Ref} type="password" placeholder='Sua senha' />
                         <input ref={userData.password2Ref} type="password" placeholder='Confirme sua senha' />
                         <input className={styles.signUpBtn} type="submit" value="Cadastrar" onClick={handleSubmit} />
+                        {loader ? <Loader /> : null}
                     </form>
                     <div className={styles.additionalInfoDiv}>
                         <p>Já tem uma conta? <span><Link to='/gather-sphere-frontend/login'>Entrar!</Link></span></p>

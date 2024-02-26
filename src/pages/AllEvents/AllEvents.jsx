@@ -1,12 +1,12 @@
 import { useEffect, useContext, useState } from "react"
-import { api } from "../sevices/api.js"
+import { api } from "../../data/services/api.js"
 import styles from './AllEvents.module.css'
-import { AuthContext } from "../contexts/auth.jsx"
+import { AuthContext } from "../../data/contexts/auth.jsx"
 import { useNavigate } from "react-router-dom"
-import NavBar from "../components/NavBar.jsx"
-import Header from "../components/Header.jsx"
-import Footer from '../components/Footer.jsx'
-import Modal from "../components/Modal.jsx"
+import NavBar from "../../ui/components/NavBar/NavBar.jsx"
+import Header from "../../ui/components/Header/Header.jsx"
+import Footer from '../../ui/components/Footer/Footer.jsx'
+import Modal from "../../ui/components/Modal/Modal.jsx"
 
 export default function AllEvents(){
 

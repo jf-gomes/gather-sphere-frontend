@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AuthContext } from '../contexts/auth.jsx'
+import { AuthContext } from '../../../data/contexts/auth.jsx'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 

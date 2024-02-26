@@ -1,10 +1,11 @@
 import styles from './Login.module.css'
 import { Link, useNavigate } from 'react-router-dom'
-import { useContext, useRef } from 'react'
-import { api } from '../sevices/api.js'
-import { AuthContext } from '../contexts/auth.jsx'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
+import { useContext, useRef, useState } from 'react'
+import { api } from '../../data/services/api.js'
+import { AuthContext } from '../../data/contexts/auth.jsx'
+import Header from '../../ui/components/Header/Header.jsx'
+import Footer from '../../ui/components/Footer/Footer.jsx'
+import Loader from '../../ui/components/Loader/Loader.jsx'
 
 export default function Login(){
 
@@ -13,6 +14,8 @@ export default function Login(){
     const emailRef = useRef(null)
     const passRef = useRef(null)
 
+    const [loader, setLoader] = useState(false)
+
     const navigate = useNavigate()
 
     async function handleSubmit(e){
@@ -20,6 +23,7 @@ export default function Login(){
         if (!emailRef.current?.value || !passRef.current?.value){
             alert('Prencha os campos!')
         } else {
+            setLoader(true)
             const response = await api.post('/users/login', {
                 email: emailRef.current?.value,
                 password: passRef.current?.value
@@ -33,7 +37,9 @@ export default function Login(){
                 setToken(`${response.data.token}`)
                 setUserData(response.data.user)
                 navigate('/gather-sphere-frontend/allevents')
+                setLoader(false)
             }
+            setLoader(false)
         }
     }
 
@@ -47,6 +53,7 @@ export default function Login(){
                         <input type="email" placeholder='Seu e-mail' ref={emailRef} />
                         <input type="password" placeholder='Sua senha' ref={passRef} />
                         <input className={styles.loginBtn} type="submit" value="Entrar" onClick={handleSubmit} />
+                        {loader ? <Loader /> : null}
                     </form>
                     <div className={styles.additionalInfoDiv}>
                         <p>Não possui uma conta? <span><Link to='/gather-sphere-frontend/signup'>Criar agora!</Link></span></p>

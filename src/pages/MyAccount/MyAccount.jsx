@@ -1,11 +1,12 @@
 import styles from './MyAccount.module.css'
 import { useContext, useEffect, useState } from 'react'
-import { api } from '../sevices/api'
+import { api } from '../../data/services/api.js'
 import { useNavigate } from 'react-router-dom'
-import Header from '../components/Header'
-import { AuthContext } from '../contexts/auth'
-import NavBar from '../components/NavBar.jsx'
-import Footer from '../components/Footer.jsx'
+import Header from '../../ui/components/Header/Header.jsx'
+import { AuthContext } from '../../data/contexts/auth.jsx'
+import NavBar from '../../ui/components/NavBar/NavBar.jsx'
+import Footer from '../../ui/components/Footer/Footer.jsx'
+import Loader from '../../ui/components/Loader/Loader.jsx'
 
 export default function MyAccount(){
 
@@ -15,6 +16,7 @@ export default function MyAccount(){
     const [email, setEmail] = useState(userData.email)
     const [cpf, setCpf] = useState(userData.cpf)
     const [cel, setCel] = useState(userData.cel)
+    const [loader, setLoader] = useState(false)
 
     const navigate = useNavigate()
 
@@ -24,6 +26,7 @@ export default function MyAccount(){
 
     async function handleSubmit(e){
         e.preventDefault()
+        setLoader(true)
         const response = await api.patch(`/users/${userData._id}`, {
             name: name,
             email: email,
@@ -39,7 +42,9 @@ export default function MyAccount(){
                 }
             })
             setUserData(user.data.user)
+            setLoader(false)
         }
+        setLoader(false)
     }
 
     return (
@@ -55,6 +60,7 @@ export default function MyAccount(){
                         <input value={cpf} onChange={(txt) => setCpf(txt.target.value)} type="text" placeholder='CPF (apenas números)' />
                         <input value={cel} onChange={(txt) => setCel(txt.target.value)} type="text" placeholder='Celular' />
                         <input className={styles.signUpBtn} type="button" value="Editar" onClick={handleSubmit} />
+                        {loader ? <Loader /> : null}
                     </form>
                 </div>
             </main>

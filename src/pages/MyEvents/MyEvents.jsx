@@ -1,10 +1,10 @@
-import Header from '../components/Header.jsx'
+import Header from '../../ui/components/Header/Header.jsx'
 import { useEffect, useContext, useState } from 'react'
-import { AuthContext } from '../contexts/auth.jsx'
+import { AuthContext } from '../../data/contexts/auth.jsx'
 import styles from './MyEvents.module.css'
-import NavBar from '../components/NavBar.jsx'
-import { api } from '../sevices/api.js'
-import Footer from '../components/Footer.jsx'
+import NavBar from '../../ui/components/NavBar/NavBar.jsx'
+import { api } from '../../data/services/api.js'
+import Footer from '../../ui/components/Footer/Footer.jsx'
 import { useNavigate } from 'react-router-dom'
 
 export default function MyEvents(){

@@ -1,8 +1,8 @@
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Header from "../../ui/components/Header/Header.jsx"
+import Footer from "../../ui/components/Footer/Footer.jsx"
 import styles from './Home.module.css'
 import { useNavigate } from "react-router-dom"
-import Slides from "../components/Slides"
+import Slides from "../../ui/components/Slides/Slides.jsx"
 
 export default function Home(){
 

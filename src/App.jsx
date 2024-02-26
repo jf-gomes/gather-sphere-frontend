@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import AuthProvider from './contexts/auth.jsx'
-import Home from './pages/Home.jsx'
-import Login from './pages/Login'
-import SignUp from './pages/SignUp'
-import AllEvents from './pages/AllEvents'
-import MyEvents from './pages/MyEvents.jsx'
-import MyAccount from './pages/MyAccount.jsx'
+import AuthProvider from './data/contexts/auth.jsx'
+import Home from './pages/Home/Home.jsx'
+import Login from './pages/Login/Login.jsx'
+import SignUp from './pages/SignUp/SignUp.jsx'
+import AllEvents from './pages/AllEvents/AllEvents.jsx'
+import MyEvents from './pages/MyEvents/MyEvents.jsx'
+import MyAccount from './pages/MyAccount/MyAccount.jsx'
 
 function App() {
 
