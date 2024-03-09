@@ -2,7 +2,7 @@ import Header from "../../ui/components/Header/Header.jsx"
 import Footer from "../../ui/components/Footer/Footer.jsx"
 import styles from './Home.module.css'
 import { useNavigate } from "react-router-dom"
-import Slides from "../../ui/components/Slides/Slides.jsx"
+import startImg from '../../assets/startImg.png'
 
 export default function Home(){
 
@@ -21,7 +21,7 @@ export default function Home(){
                     </div>
                 </div>
                 <div>
-                    <Slides />
+                    <img src={startImg} alt="GatherSphere" className={styles.startImg} />
                 </div>
             </main>
             <Footer />

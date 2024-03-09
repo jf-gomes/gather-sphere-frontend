@@ -55,3 +55,8 @@ h1 span{
 .additionalInfoDiv span a:hover{
     text-decoration: underline;
 }
+
+.mainDiv{
+    width: 70%;
+    max-width: 400px;
+}

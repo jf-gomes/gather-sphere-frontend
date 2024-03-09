@@ -42,3 +42,13 @@
     background-color: #788BFF;
     color: white;
 }
+
+.startImg{
+    width: 500px;
+}
+
+@media (max-width: 640px) {
+    .startImg{
+        width: 350px;
+    }
+}
